@@ -2,7 +2,7 @@ name: Run script
 
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '0 9 * * *'
   workflow_dispatch:
 
 jobs:
@@ -25,4 +25,5 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           API_CLIMA: ${{ secrets.API_CLIMA }}
           EMAIL_JORD: ${{secrets.EMAIL_JORD}}
+          EMAIL_CYNT: ${{secrets.EMAIL_CYNT}}
         run: python main.py
