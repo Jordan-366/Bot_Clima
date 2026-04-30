@@ -16,7 +16,7 @@ def jundiaiClima():
     weather_params_jund = {
         "lat": -23.187080,
         "lon": -46.884048,
-        "cnt": 4,
+        "cnt": 5,
         "appid": api,
     }
     reponse_jund = requests.get(OWM_Endpoint, params=weather_params_jund)
