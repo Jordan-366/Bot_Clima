@@ -1,0 +1,22 @@
+name: Run script
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Run script
+        env:
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          API_CLIMA: ${{ secrets.OWM_API_CLIMA }}
+          EMAIL_JORD: ${{secrets.EMAIL_JORD}}
+        run: python main.py
